@@ -1,0 +1,70 @@
+/*
+Assignment: Module_2.2: Building a Web Page Excercise, Part 2
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: March 25, 2026
+Description: This program demonstrates the use of CSS to style an HTML 
+web page that provides an introduction to Wade Eckert. The CSS styles the 
+font size, weight, line height, text alignment, and colors for different 
+elements on the page to enhance readability and visual appeal.
+*/
+
+/* Set base font size for html and body */
+html, body {
+	font-size: 16px;
+}
+
+/* Style for the paragraph elements */
+p {
+	font-weight: 400; /* Set font weight to normal for paragraphs */
+	line-height: 1.4em; /* Set line height higher for better readability */
+}
+
+/* Indent the intro class */
+.intro {
+	text-indent: 2em;
+}
+
+/* Style for the span elements with class "sentence" */
+.sentence {
+	font-style: italic;
+}
+
+/* Style for the h1 element */
+h1 {
+	font-weight: 700; /* Set font weight to bold for h1 */
+	text-transform: uppercase; 
+	text-align: center;
+}
+
+/* Style for the h2 element */
+h2 {
+	font-weight: 500; /* Set font weight to slightly bolder for h2 */
+	text-align: left;
+	padding-top: 15px; /* Add some space above the h2 */
+}
+
+/* Style for the address element */
+address {
+    text-align: center;
+}
+
+/* Style the Bellevue University website URL */
+a[href^="https://www.bellevue.edu/"] {
+	font-weight: bold;
+	font-size: 1.25em;
+	color: #4F3674; /* Set the color to a shade of purple */
+	text-decoration: none;
+}
+
+/* Add hover effect for the Bellevue University website URL */
+a[href="https://www.bellevue.edu/"]:hover { 
+	text-decoration: underline;
+	background-color: #D6A800; /* Add a background color of gold on hover */
+}
+
+/* Style the visited state of the Bellevue University website URL */
+a[href="https://www.bellevue.edu/"]:visited {
+	color: #8d0505; /* Set the color to a shade of red for visited links */
+	font-weight: 600; 
+}
