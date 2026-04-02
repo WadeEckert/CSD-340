@@ -1,0 +1,41 @@
+/*
+Assignment: Module_3.2: GitHub Pages
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: April 1, 2026
+Description: This CSS file styles the HTML page for the GitHub Pages assignment for Wade Eckert. 
+It sets the base font size, styles headings with a deep blue background and white text, and defines link colors that fit a color scheme. 
+The container is given margins to center the content on the page, and hover effects are added to links for better user interaction.
+*/
+
+/* Set the base font size for the div container in the body */
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* Style for all heading elements to have a deep blue background and white text */
+h1, h2, h3, h4 {
+    background-color: #003366; /* Deep blue */
+    color: #FFFFFF; /* White font for contrast */
+    border: 1px solid #D6A800;
+    padding: 10px;
+}
+
+/* Style for all anchor elements to have a gold color that matches the border, with no underline */
+a {
+    color: #D6A800; /* Gold, matches border, blends with scheme */
+    text-decoration: none;
+}
+
+/* Add hover effect for all anchor elements to change color to a lighter gold/yellow */
+a:hover {
+    color: #FFD700; /* Lighter gold/yellow for hover */
+}
+
+/* Style for visited links to have a darker gold color */
+a:visited {
+    color: #A67C00; /* Darker gold for visited links */
+}
+
