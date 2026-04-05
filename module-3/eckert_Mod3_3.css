@@ -1,0 +1,77 @@
+/*
+Assignment: Module 3.3: Build a Web Page Exercise, Part 3
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: April 4, 2026
+Description: CSS styles for the Module 3.3: Build a Web Page Exercise, Part 3 HTML page.
+*/
+
+/* Style for h3 headings */
+h3 {
+    font-weight: 500;
+}
+
+/* Style for unordered and ordered lists, and list items */
+ul, ol, li {
+	font-weight: 300;
+	}
+
+/* Add spacing between list items for readability */
+ol li,
+ul li {
+	margin-bottom: 8px;
+}
+
+/* Centered h1 title */
+.centered-title {
+	text-align: center;
+}
+
+/* Side-by-side divs wrapper */
+.side-by-side-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 5%;
+}
+
+/* Red border and rounded corners for ordered list and its title */
+.side-div-left {
+	border: 1px solid red;
+	border-radius: 15px;
+	padding: 10px;
+    width: 45%;
+}
+
+/* Dashed red border and rounded corners for unordered list and its title */
+.side-div-right {
+	border: 1px dashed red;
+	border-radius: 15px;
+    padding: 10px;
+    width: 45%;
+}
+
+.side-div-right ul {
+	list-style-type: upper-roman;
+	list-style-position: inside;
+}
+
+/* Full-width div below side-by-sides */
+.full-width-div {
+	width: 100%;
+	margin-top: 60%;
+	float: right;
+	margin-bottom: 20px;
+}
+
+/* Float the link in the bottom div to the right */
+.full-width-div a {
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+/* Styling for anchor elements on hover */
+a:hover {
+	text-decoration: underline;
+}

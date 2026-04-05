@@ -1,3 +1,7 @@
+/* Set font weight of all lists to 300 */
+ul, ol {
+    font-weight: 300;
+}
 /*
 Assignment: Module_3.2: GitHub Pages
 Original Author: Wade Eckert

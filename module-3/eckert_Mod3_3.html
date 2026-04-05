@@ -1,7 +1,56 @@
 <!--
-Assignment: Build a Webpage Exercise, Part 3
+Assignment: Module 3.3: Build a Web Page Exercise, Part 3
 Original Author: Wade Eckert
 Professor: Dr. Mortoza Abdullah
-Date: April 1, 2026
-Description:
+Date: April 4, 2026
+Description: HTML page for the Module 3.3: Build a Web Page Exercise, Part 3, 
+including a list of favorite books and things learned since the course started.
+Also contains a link to navigate back to the landing page.
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Module 3.3: Build a Web Page Exercise, Part 3">
+        <meta name="author" content="Wade Eckert">
+        <link href="eckert_Mod3_3.css" rel="stylesheet" type="text/css">
+        <title>CSD 340 Web Development with HTML and CSS</title>
+    </head>
+    <body>
+        <div id="container"> <!-- Main container starts -->
+            <h1 class="centered-title">Assignment 3.3: Build a Web Page Exercise - Part 3</h1>
+            <div class="side-by-side-wrapper"> <!-- Side-by-side wrapper starts -->
+                <div class="side-div-left"> <!-- Left side content -->
+                    <h3>Top 10 Favorite Books</h3>
+                    <ol>
+                        <li>1984</li>
+                        <li>Brave New World</li>
+                        <li>Animal Farm</li>
+                        <li>Lord of the Rings</li>
+                        <li>Harry Potter and the Deathly Hallows</li>
+                        <li>It</li>
+                        <li>The Catcher in the Rye</li>
+                        <li>Catch-22</li>
+                        <li>Dune</li>
+                        <li>The Hobbit</li>
+                    </ol>
+                </div> <!-- Left side content ends-->
+                <div class="side-div-right"> <!-- Right side content -->
+                    <h3>5 Things I've Learned Since the Course Started</h3>
+                    <ul>
+                        <li>Understanding the basics of HTML and CSS.</li>
+                        <li>Using semantic HTML elements to improve accessibility and SEO.</li>
+                        <li>Applying CSS styles to enhance the visual appearance of web pages.</li>
+                        <li>Using forms to collect user input and interact with web applications.</li>
+                        <li>Understanding the importance of responsive design for different devices.</li>
+                    </ul>
+                </div> <!-- Right side content ends -->
+            </div> <!-- Side-by-side wrapper ends -->
+                <div class="full-width-div"> <!-- Content for the full-width bottom div -->
+                    <a href="../index.html">Back to Landing Page</a>
+                </div> <!-- Content for the full-width bottom div ends -->
+        </div> <!-- Main container ends -->
+    </body>
+</html>
