@@ -1,0 +1,52 @@
+<!--
+Assignment: Module_4.2: Build a Webpage Exercise, Part 4
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: April 11, 2026
+Description: This webpage displays a simple image gallery of book covers with captions showing the book title and author.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Module 4.2: Build a Webpage Exercise, Part 4">
+        <meta name="author" content="Wade Eckert">
+        <link href="eckert_Mod4_2.css" rel="stylesheet" type="text/css">
+        <title>CSD 340 Web Development with HTML and CSS</title>
+    </head>
+    <body>
+        <div id="container"> <!-- Main container div to hold all content and apply styling -->
+            <h1>Assignment 4.2: Build a Web Page Exercise, Part 4</h1>
+            <div id="image-gallery"> <!-- Image gallery container -->
+                <div class="gallery-grid"> <!-- Grid container for gallery items -->
+                    <div class="gallery-item"> <!-- Individual gallery item number 1-->
+                        <h3>1984</h3>
+                        <figure>
+                            <img src="images/1984.jfif" alt="1984 Book Cover">
+                            <figcaption>(Author: George Orwell)</figcaption>
+                        </figure>
+                    </div> <!-- End of individual gallery item number 1-->
+                    <div class="gallery-item"> <!-- Individual gallery item number 2-->
+                        <h3>Brave New World</h3>
+                        <figure>
+                            <img src="images/brave_new_world.jfif" alt="Brave New World Book Cover">
+                            <figcaption>(Author: Aldous Huxley)</figcaption>
+                        </figure>
+                    </div> <!-- End of individual gallery item number 2-->
+                    <div class="gallery-item"> <!-- Individual gallery item number 3-->
+                        <h3>Animal Farm</h3>
+                        <figure>
+                            <img src="images/animal_farm.jfif" alt="Animal Farm Book Cover">
+                            <figcaption>(Author: George Orwell)</figcaption>
+                        </figure>
+                    </div> <!-- End of individual gallery item number 3-->
+                </div> <!-- End of gallery grid -->
+            </div> <!-- End of image gallery container -->
+            <div id="back-link-container"> <!-- Back link container -->
+                <a href="../index.html">Back to Landing Page</a>
+            </div> <!-- End of back link container -->
+        </div> <!-- End of container div -->
+    </body>
+</html>

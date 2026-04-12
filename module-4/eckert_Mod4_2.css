@@ -1,0 +1,80 @@
+/*
+Assignment: Module_4.2: Build a Webpage Exercise, Part 4
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: April 11, 2026
+Description: This CSS file provides styling for the Module 4.2 webpage exercise, specifically 
+for the image gallery of book covers and associated captions.
+*/
+
+#container h1 {
+    text-align: center;
+    color: rgba(180, 60, 0, 0.85); /* burnt orange */
+}
+
+#image-gallery {
+    margin-top: 10%;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+/* Grid container for the gallery items */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* creates three equal columns using fractional units */
+}
+
+/* Individual gallery item styling */
+.gallery-item {
+    background: white;
+    border: 1px solid rgba(180, 60, 0, 0.85);
+    padding: 16px;
+    text-align: center;
+}
+
+/* Styling for the images within each gallery item */
+.gallery-item img {
+    width: 100%; /* makes the image take up the full width of the gallery item */
+    height: auto; /* maintains the aspect ratio of the images */
+    max-height: 220px; /* limits the maximum height of the images to maintain uniformity */
+    object-fit: cover; /* ensures the image covers the space without distortion */
+}
+
+.gallery-item h3 {
+    text-align: center;
+    color: rgba(0, 90, 180, 0.85); /* blue */
+}
+
+#back-link-container {
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    text-align: right;
+}
+
+a {
+    color: blue;
+    font-size: 1em;
+    text-decoration-line: none;
+}
+
+a:visited {
+    color: rgba(180, 60, 0, 0.85); /* burnt orange */
+    text-decoration-line: none;
+    font-size: 1em;
+}
+
+a:hover {
+    text-decoration-line: none;
+    color: darkblue;
+    font-size: 1em;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    color: rgba(60, 60, 60, 0.7); /* dark gray */
+    font-style: italic;
+    font-size: 0.75em;
+}
