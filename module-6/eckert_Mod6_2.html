@@ -1,0 +1,48 @@
+<!--
+Assignment: Module 6.2: Build a Webpage Exercise, Part 5
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: April 20, 2026
+Description: This is the HTML file for the Build a Webpage Exercise, Part 5 assignment for Wade Eckert's 
+CSD 340 Web Development with HTML and CSS course. The page features a header with a navigation bar, a main 
+content area with a card component listing the top 5 favorite foods, and a footer with a link back to the landing page.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="CSD 340 Web Development with HTML and CSS - Assignment 6.2">
+        <meta name="author" content="Wade Eckert">
+        <link href="eckert_Mod6_2.css" rel="stylesheet" type="text/css">
+        <title>CSD 340 Web Development with HTML and CSS</title>
+        <header> <!-- Header section with navigation bar -->
+            <h1>Assignment 6.2: Build a Web Page - Part 5</h1>
+        </header> <!-- End of header section -->
+        <div id="navbar"> <!-- Navigation bar -->
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div> <!-- End of navigation bar -->
+    </head>
+    <body>
+        <div id="container"> <!-- Main container for page content -->
+            <div class="card"> <!-- Card component to display content  -->
+                <div class="card-title">Top 5 Favorite Foods</div> <!-- Container for card title -->
+                <div class="card-content"> <!-- Container for card content -->
+                    <ol>
+                        <li><a href="https://www.delish.com/cooking/recipe-ideas/a22860806/pot-roast-recipe/" target="_blank">Pot Roast</a></li>
+                        <li><a href="https://www.cookingclassy.com/beef-stew/" target="_blank">Beef Stew</a></li>
+                        <li><a href="https://www.allrecipes.com/recipe/26317/chicken-pot-pie-ix/" target="_blank">Chicken Pot Pie</a></li>
+                        <li><a href="https://www.seriouseats.com/spaghetti-alla-carbonara-recipe" target="_blank">Carbonara</a></li>
+                        <li><a href="https://www.seriouseats.com/tacos-al-pastor-recipe" target="_blank">Tacos al Pastor</a></li>
+                    </ol>
+                </div> <!-- End of card content container -->
+            </div> <!-- End of card component -->
+        </div> <!-- End of main container -->
+        <footer> <!-- Footer section -->
+            <a href="../index.html" class="portal-link">Back to Landing Page</a>
+        </footer> <!-- End of footer section -->
+    </body>
+</html>
