@@ -1,0 +1,109 @@
+<!--
+Assignment: Module 8.2: Build a Webpage Exercise, Part 6
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: May 4, 2026
+Description: This is the HTML file for the webpage built as part of Assignment 8.2 for the CSD 340 Web Development with HTML and CSS course. 
+The webpage includes a header, navigation bar, two card components displaying favorite movies and foods, and a footer with a link back to the landing page. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="CSD 340 Web Development with HTML and CSS - Assignment 8.2">
+        <meta name="author" content="Wade Eckert">
+        <link href="eckert_Mod8_2.css" rel="stylesheet" type="text/css">
+        <title>CSD 340 Web Development with HTML and CSS</title>
+        <header> <!-- Header section with navigation bar -->
+            <h1>Assignment 8.2: Build a Web Page - Part 6</h1>
+        </header> <!-- End of header section -->
+        <div id="navbar"> <!-- Navigation bar -->
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div> <!-- End of navigation bar -->
+    </head>
+    <body>
+        <div id="container"> <!-- Main container for page content -->
+
+            <div class="card"> <!-- Card component to display content for favorite movies -->
+                <div class="card-title">Top 5 Favorite Movies</div> <!-- Container for card title for favorite movies -->
+                <div class="card-content"> <!-- Container for card content for favorite movies -->
+                    <table id="movies">
+                        <tr>
+                            <th>Movie Name</th>
+                            <th>Two Characters</th>
+                        </tr>
+                        <tr>
+                            <td>The Shawshank Redemption</td>
+                            <td>
+                                <ul>
+                                    <li>Andy Dufresne</li>
+                                    <li>Ellis "Red" Redding</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>The Godfather</td>
+                            <td>
+                                <ul>
+                                    <li>Vito Corleone</li>
+                                    <li>Michael Corleone</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>The Dark Knight</td>
+                            <td>
+                                <ul>
+                                    <li>Bruce Wayne (Batman)</li>
+                                    <li>Joker</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Forrest Gump</td>
+                            <td>
+                                <ul>
+                                    <li>Forrest Gump</li>
+                                    <li>Jenny Curran</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Star Wars: Episode IV</td>
+                            <td>
+                                <ul>
+                                    <li>Luke Skywalker</li>
+                                    <li>Darth Vader</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div> <!-- End of card content container for favorite movies -->
+            </div> <!-- End of card component for favorite movies -->
+
+            <br> <!-- Line break for spacing between cards -->
+            <br> <!-- Line break for spacing between cards -->
+            
+            <div class="card"> <!-- Card component to display content for favorite foods -->
+                <div class="card-title">Top 5 Favorite Foods</div> <!-- Container for card title for favorite foods -->
+                <div class="card-content"> <!-- Container for card content for favorite foods -->
+                    <ol>
+                        <li><a href="https://www.delish.com/cooking/recipe-ideas/a22860806/pot-roast-recipe/" target="_blank">Pot Roast</a></li>
+                        <li><a href="https://www.cookingclassy.com/beef-stew/" target="_blank">Beef Stew</a></li>
+                        <li><a href="https://www.allrecipes.com/recipe/26317/chicken-pot-pie-ix/" target="_blank">Chicken Pot Pie</a></li>
+                        <li><a href="https://www.seriouseats.com/spaghetti-alla-carbonara-recipe" target="_blank">Carbonara</a></li>
+                        <li><a href="https://www.seriouseats.com/tacos-al-pastor-recipe" target="_blank">Tacos al Pastor</a></li>
+                    </ol>
+                </div> <!-- End of card content container for favorite foods -->
+            </div> <!-- End of card component for favorite foods -->
+        </div> <!-- End of main container -->
+        <footer class="footer-flex"> <!-- Footer section -->
+            <span class="footer-left">&copy; 2026 Eckert</span>
+            <a href="../index.html" class="portal-link footer-right">Back to Landing Page</a>
+        </footer> <!-- End of footer section -->
+    </body>
+</html>
