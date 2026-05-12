@@ -1,0 +1,87 @@
+<!--
+Assignment: Module_9.3: JavaScript Exercise, Part 1
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: May 12, 2026
+Description: This HTML file creates a webpage that introduces Wade Eckert using JavaScript to reveal 
+certain pieces of information when buttons are clicked. The page includes a header, an introduction section with 
+placeholders for information, and a footer with contact information.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Module 9.3: JavaScript Exercise, Part 1">
+        <meta name="author" content="Wade Eckert">
+        <link href="eckert_Mod9_3.css" rel="stylesheet" type="text/css">
+        <title>CSD 340 Web Development with HTML and CSS</title>
+    </head>
+    <body>
+    <div id="container"> <!-- Container div to hold all content and apply styling starts-->
+
+        <header>
+            <h1>Assignment 9.3: JavaScript - Part 1</h1>
+        </header>
+
+        <h2>An Introduction to Wade Eckert</h2>
+
+        <p class="intro">
+            Hi Everyone! My name is Wade Eckert, and I am 34 years old, attending Bellevue University to further my education and career prospects.
+            I currently live in <span id="word1">__________</span>, Colorado, but I am originally from Jasper, Indiana, where I spent most of my life.
+            I moved to Denver in 2020 during the pandemic for a job opportunity and have been here ever since.
+        </p>
+
+        <p>
+            I am in my final year of study at Bellevue University, working toward a double major in
+            <span id="word2">__________</span> and Software Development.
+            Education has always been important to me, but I am excited to be nearing graduation and being able to apply my education in real-world scenarios.
+            Balancing work and school has been challenging, but it has also been very rewarding.
+        </p>
+
+        <p>
+            This past October, I married my wonderful wife,
+            <span id="word3">__________</span>.
+            A fun fact about us is that we share the exact same birthday, which always makes our celebrations extra special.
+            We also have two dogs who keep us busy and entertained every day.
+        </p>
+
+        <p>
+            Some of my favorite hobbies include playing video games, especially MMORPGs, and watching or playing
+            <span id="word4">__________</span>.
+            I also enjoy going on walks with my wife and our dogs, as well as watching various television series together.
+            We spend a lot of our free time exploring new shows and movies after busy days of work, study, and coding.
+        </p>
+
+        <hr>
+
+        <div> <!-- Div to hold the buttons for revealing information -->
+            <button type="button" onclick="document.getElementById('word1').innerHTML = city">Reveal Word 1</button>
+
+            <button type="button" onclick="document.getElementById('word2').innerHTML = major">Reveal Word 2</button>
+
+            <button type="button" onclick="document.getElementById('word3').innerHTML = wife">Reveal Word 3</button>
+
+            <button type="button" onclick="document.getElementById('word4').innerHTML = hobby">Reveal Word 4</button>
+        </div> <!-- End of div for buttons -->
+
+        <footer>
+            <address>
+                <p><a href="https://www.bellevue.edu/">Bellevue University</a></p>
+                <p>1000 Galvin Road South</p>
+                <p>Bellevue, NE 68005</p>
+            </address>
+        </footer>
+
+    </div> <!-- End of container div -->
+
+    <script>
+        var city = "Denver";
+        var major = "Mathematics";
+        var wife = "Leigh";
+        var hobby = "basketball";
+    </script>
+
+</body>
+</html>
