@@ -1,0 +1,237 @@
+<!--
+Assignment: Module 10.3: JavaScript Exercise, Part 2
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: May 20, 2026
+Description: This page uses JavaScript mouse events to create an interactive travel destination gallery. 
+Users can click on thumbnail images to change the main destination image and text, hover over thumbnails for a preview message, 
+and double-click the main image to toggle a grayscale filter. The page is styled with embedded CSS.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript event handling assignment">
+    <meta name="author" content="Wade Eckert">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1f2528;
+            color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #8fd6e1;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #d6d6d6;
+            margin-bottom: 30px;
+        }
+
+        .main-card {
+            background-color: #2d3438;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        #mainImage {
+            width: 100%;
+            max-width: 850px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #8fd6e1;
+            transition: filter 0.3s ease;
+            cursor: pointer;
+        }
+
+        .grayscale {
+            filter: grayscale(100%);
+        }
+
+        #destinationTitle {
+            color: #8fd6e1;
+            margin-top: 20px;
+        }
+
+        #destinationText {
+            max-width: 750px;
+            margin: 10px auto 25px;
+            line-height: 1.6;
+            color: #e2e2e2;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .thumbnail {
+            width: 180px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .thumbnail:hover {
+            box-shadow: 0 0 12px rgba(143, 214, 225, 0.8);
+        }
+
+        .active {
+            border: 3px solid #8fd6e1;
+        }
+
+        #helperMessage {
+            margin-top: 25px;
+            color: #8fd6e1;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 10px;
+            text-align: center;
+            background-color: #2d3438;
+            border-top: 2px solid #8fd6e1;
+        }
+
+        footer a {
+            color: #8fd6e1;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+    </style>
+
+    <script>
+        // JavaScript function to handle the main image and text update when a thumbnail is clicked
+        function changeDestination(imageFile, destinationName, destinationDescription, thumbnail) {
+            document.getElementById("mainImage").src = imageFile;
+            document.getElementById("mainImage").alt = destinationName;
+            document.getElementById("destinationTitle").innerHTML = destinationName;
+            document.getElementById("destinationText").innerHTML = destinationDescription;
+
+            // Remove the "active" class from all thumbnails to reset their state
+            var thumbnails = document.getElementsByClassName("thumbnail");
+
+            // Loop through all thumbnails and remove the "active" class to ensure only the clicked thumbnail is highlighted
+            for (var i = 0; i < thumbnails.length; i++) {
+                thumbnails[i].classList.remove("active");
+            }
+
+            // Add the "active" class to the clicked thumbnail to highlight it
+            thumbnail.classList.add("active");
+            document.getElementById("helperMessage").innerHTML = "Now viewing " + destinationName + ". Double-click the large image to toggle grayscale.";
+        }
+
+        // JavaScript functions to handle image enlargement on hover
+        function enlargeImage(image) {
+            image.style.transform = "scale(1.08)";
+        }
+
+        // JavaScript function to restore the original size of the image when the mouse leaves
+        function restoreImage(image) {
+            image.style.transform = "scale(1)";
+        }
+
+        // JavaScript function to display a helper message when hovering over a thumbnail
+        function showHelperMessage(message) {
+            document.getElementById("helperMessage").innerHTML = message;
+        }
+
+        // JavaScript function to toggle the grayscale filter on the main image when it is double-clicked
+        function toggleGrayscale() {
+            document.getElementById("mainImage").classList.toggle("grayscale");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container"> <!-- Container div to hold all content and apply styling starts-->
+        <h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+        <p class="intro">
+            Click a destination image below to explore a new location. Hover over each thumbnail for a preview message, and double-click the main image to toggle grayscale.
+        </p>
+
+        <div class="main-card"> <!-- Main card div to hold the main image and text content starts-->
+            <img id="mainImage"
+                 src="Images/iceland.jfif"
+                 alt="Iceland"
+                 ondblclick="toggleGrayscale()">
+
+            <h2 id="destinationTitle">Iceland</h2>
+
+            <p id="destinationText">
+                Iceland is known for its dramatic natural beauty, including northern lights, snowy landscapes, glaciers, and volcanic scenery. It is a perfect destination for travelers who enjoy unique outdoor experiences.
+            </p>
+
+            <div class="gallery"> <!-- Gallery div to hold the thumbnail images starts-->
+                <img src="Images/iceland.jfif"
+                     alt="Iceland"
+                     class="thumbnail active"
+                     onclick="changeDestination('Images/iceland.jfif', 'Iceland', 'Iceland is known for its dramatic natural beauty, including northern lights, snowy landscapes, glaciers, and volcanic scenery. It is a perfect destination for travelers who enjoy unique outdoor experiences.', this)"
+                     onmouseover="enlargeImage(this)"
+                     onmouseout="restoreImage(this)"
+                     onmouseenter="showHelperMessage('Click to explore Iceland.')">
+
+                <img src="Images/japan.jfif"
+                     alt="Japan"
+                     class="thumbnail"
+                     onclick="changeDestination('Images/japan.jfif', 'Japan', 'Japan blends historic temples, cherry blossoms, modern cities, and rich cultural traditions. It is a destination that combines peaceful scenery with a strong sense of history and design.', this)"
+                     onmouseover="enlargeImage(this)"
+                     onmouseout="restoreImage(this)"
+                     onmouseenter="showHelperMessage('Click to explore Japan.')">
+
+                <img src="Images/maldives.jfif"
+                     alt="Maldives"
+                     class="thumbnail"
+                     onclick="changeDestination('Images/maldives.jfif', 'Maldives', 'The Maldives is famous for clear turquoise water, white sand beaches, and tropical island resorts. It is often associated with relaxation, ocean views, and peaceful travel experiences.', this)"
+                     onmouseover="enlargeImage(this)"
+                     onmouseout="restoreImage(this)"
+                     onmouseenter="showHelperMessage('Click to explore the Maldives.')">
+
+                <img src="Images/switzerland.jfif"
+                     alt="Switzerland"
+                     class="thumbnail"
+                     onclick="changeDestination('Images/switzerland.jfif', 'Switzerland', 'Switzerland is known for its mountain landscapes, alpine villages, hiking trails, and scenic views. It is a great destination for travelers who enjoy nature, photography, and outdoor adventure.', this)"
+                     onmouseover="enlargeImage(this)"
+                     onmouseout="restoreImage(this)"
+                     onmouseenter="showHelperMessage('Click to explore Switzerland.')">
+            </div> <!-- End of gallery div -->
+
+            <p id="helperMessage">Hover over a destination image to learn more.</p>
+
+        </div> <!-- End of main card div -->
+    </div> <!-- End of container div -->
+
+    <footer> <!-- Footer section with a link back to the landing page -->
+    <p><a href="../index.html">Back to Landing Page</a></p>
+    </footer>
+</body>
+</html>
