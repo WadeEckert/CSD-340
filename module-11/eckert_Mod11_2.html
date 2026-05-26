@@ -1,0 +1,163 @@
+<!--
+Assignment: Assignment 11.2: JavaScript Exercise, Part 3
+Original Author: Wade Eckert
+Professor: Dr. Mortoza Abdullah
+Date: May 26, 2026
+Description: This page allows users to add, display, sort, and delete task list items using JavaScript arrays. 
+The tasks are stored in an array and displayed on the page. Users can delete the last item or select a specific item 
+to delete from a dropdown menu. The list can also be sorted alphabetically.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JavaScript array task list assignment">
+    <meta name="author" content="Wade Eckert">
+    <link href="eckert_Mod11_2.css" rel="stylesheet" type="text/css">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+</head>
+
+<body>
+    <main class="container"> <!-- Main container for the page starts-->
+        <!-- Main assignment card for holding the form and task list -->
+        <section class="card"> <!-- Card section to hold the form and task list starts -->
+            <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+            <p class="instructions">
+                Enter a task below and click Add to add it to the list. Use the buttons to display,
+                sort, or delete items from the task array.
+            </p>
+
+            <!-- Task input area for adding new tasks -->
+            <div class="form-group">
+                <label for="taskInput">Task:</label>
+                <input type="text" id="taskInput" placeholder="Enter a task...">
+            </div> <!-- Task input area ends -->
+
+            <!-- Dropdown menu for selecting a task to delete -->
+            <div class="form-group">
+                <label for="deleteSelect">Select a task to delete:</label>
+                <select id="deleteSelect">
+                    <option value="">-- Select a task to delete --</option>
+                </select>
+            </div> <!-- Dropdown menu ends -->
+
+            <!-- Button controls -->
+            <div class="button-row">
+                <button onclick="addTask()">Add</button>
+                <button onclick="deleteLastEntry()">Delete Last Entry</button>
+                <button onclick="deleteSelectedItem()">Delete Selected Item</button>
+                <button onclick="sortTasks()">Sort</button>
+            </div> <!-- Button controls end -->
+
+            <!-- Task output display -->
+            <div id="taskDisplay" class="task-display">
+                Your task list will appear here.
+            </div> <!-- Task output display ends -->
+
+        </section> <!-- Card section ends -->
+    </main> <!-- Main container ends -->
+
+    <script>
+        // This array stores all of the tasks that the user adds
+        let taskArray = [];
+
+        // This function adds the task from the text box into the array
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const taskValue = taskInput.value.trim();
+
+            if (taskValue === "") {
+                alert("Please enter a task before clicking Add.");
+                return;
+            }
+
+            taskArray.push(taskValue);
+
+            alert("Item: '" + taskValue + "' was added as item #" + taskArray.length);
+
+            taskInput.value = "";
+            updateDeleteDropdown();
+            displayTasks();
+        }
+
+        // This function displays the current contents of the array on the page
+        function displayTasks() {
+            const taskDisplay = document.getElementById("taskDisplay");
+
+            let output = "<h2>Current Task List</h2><ol>";
+
+            for (let i = 0; i < taskArray.length; i++) {
+                output += "<li>" + taskArray[i] + "</li>";
+            }
+
+            output += "</ol>";
+            taskDisplay.innerHTML = output;
+        }
+
+        // This function deletes the last item that was added to the array
+        function deleteLastEntry() {
+            if (taskArray.length === 0) {
+                alert("There are no tasks to delete.");
+                return;
+            }
+
+            const deletedTask = taskArray.pop();
+
+            alert("Item: '" + deletedTask + "' was deleted from the task list.");
+
+            updateDeleteDropdown();
+            displayTasks();
+        }
+
+        // This function deletes the item selected in the dropdown menu
+        function deleteSelectedItem() {
+            const deleteSelect = document.getElementById("deleteSelect");
+            const selectedIndex = deleteSelect.value;
+
+            if (selectedIndex === "") {
+                alert("Please select an item to delete.");
+                return;
+            }
+
+            const deletedTask = taskArray.splice(selectedIndex, 1);
+
+            alert("Item: '" + deletedTask + "' was deleted from the task list.");
+
+            updateDeleteDropdown();
+            displayTasks();
+        }
+
+        // This function sorts the array alphabetically and then displays the updated list
+        function sortTasks() {
+            if (taskArray.length === 0) {
+                alert("There are no tasks to sort.");
+                return;
+            }
+
+            taskArray.sort();
+
+            alert("The task list has been sorted.");
+
+            updateDeleteDropdown();
+            displayTasks();
+        }
+
+        // This function keeps the dropdown menu updated with the current array items
+        function updateDeleteDropdown() {
+            const deleteSelect = document.getElementById("deleteSelect");
+
+            deleteSelect.innerHTML = '<option value="">-- Select a task to delete --</option>';
+
+            for (let i = 0; i < taskArray.length; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.textContent = taskArray[i];
+                deleteSelect.appendChild(option);
+            }
+        }
+    </script>
+</body>
+</html>
