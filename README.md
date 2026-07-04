@@ -28,6 +28,16 @@ CSD-340/
 
 Each module contains the source code, images, CSS files, JavaScript files, and supporting documentation required for that week's assignment. As the course progressed, projects became increasingly sophisticated by combining multiple web technologies into complete websites.
 
+## Live Course Projects
+
+In addition to the source code contained in this repository, many of the projects developed throughout this course have been published using **GitHub Pages**. This allows visitors to view the completed websites directly in a web browser without downloading or running the source code.
+
+**Course Project Website:**
+
+https://wadeeckert.github.io/CSD-340/
+
+The GitHub Pages site includes the completed assignments from the course and demonstrates the progression from basic HTML pages to fully styled, responsive websites developed throughout the semester.
+
 ## Topics Covered
 
 Throughout this course, I gained practical experience with:
